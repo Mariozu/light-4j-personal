@@ -1,0 +1,223 @@
+{"components":{"securitySchemes":{"petstore_auth":{"type": "oauth2","description": "This API uses OAuth 2 with the client credential grant flow.","flows":{"clientCredentials":{"tokenUrl": "https://localhost:6882/token","scopes":{"write:pets": "modify pets in your account","read:pets": "read your pets","server.info.r":"read server info"}}}}},"schemas":{"CardView":{"required":["id",
+          "name"],"properties":{"name":{"type": "string"},"id":{"type": "integer","format": "int64"},"tag":{"type": "string"}}},"Error":{"required":["code",
+          "message"],"properties":{"message":{"type": "string"},"code":{"type": "integer","format": "int32"}}}}},"servers": [
+    {
+      "url": "http://campechana.swagger.io/api-miAsistente"
+    }
+  ],"openapi": "3.0.0","paths":{"/cardView/{cardId}": {
+      "get": {
+        "summary": "Selecciona la informacion de las Card View",
+        "operationId": "showCardById",
+        "tags": [
+          "cardId"
+        ],
+        "parameters": [
+          {
+            "name": "cardId",
+            "in": "path",
+            "required": true,
+            "description": "The id of the pet to retrieve",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "security": [
+          {
+            "petstore_auth": [
+              "read:pets"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Expected response to a valid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardView"
+                },
+
+                "example": [
+                  {
+                    "id": "layout1",
+                    "type": "layout",
+                    "width": "match",
+                    "height": "wrap",
+                    "orientation": "vertical",
+                    "childs": [
+                      {
+                        "type": "label",
+                        "id": "labelName",
+                        "width": "wrap",
+                        "height": "wrap",
+                        "text": "Name:",
+                        "text_size": "22sp"
+                      },
+                      {
+                        "type": "textinput",
+                        "id": "textInputName",
+                        "width": "match",
+                        "height": "wrap",
+                        "text": "Name"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "layout2",
+                    "type": "layout",
+                    "width": "match",
+                    "height": "wrap",
+                    "orientation": "horizontal",
+                    "gravity": "center",
+                    "childs": [
+                      {
+                        "type": "button",
+                        "id": "btnCancel",
+                        "width": "wrap",
+                        "height": "wrap",
+                        "text": "Cancel",
+                        "click": {
+                          "action": "clear",
+                          "data": [
+                            {
+                              "type": "textinput",
+                              "id": "textInputName"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "button",
+                        "id": "btnSend",
+                        "width": "wrap",
+                        "height": "wrap",
+                        "text": "Send",
+                        "click": {
+                          "action": "clear",
+                          "$urlApi": "endpoint.com",
+                          "$urlApiAction": "save",
+                          "method": "post",
+                          "data": [
+                            {
+                              "type": "textinput",
+                              "id": "textInputName"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "layout",
+                        "id": "layout3",
+                        "width": "match",
+                        "height": "wrap",
+                        "orientation": "horizontal",
+                        "gravity": "center",
+                        "childs": [
+                          {
+                            "type": "checkbox",
+                            "width": "wrap",
+                            "height": "wrap",
+                            "text": "check 1"
+                          },
+                          {
+                            "type": "checkbox",
+                            "width": "wrap",
+                            "height": "wrap",
+                            "text": "check 2",
+                            "checked": "true"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "radiogroup",
+                        "id": "layout4",
+                        "width": "match",
+                        "height": "wrap",
+                        "orientation": "horizontal",
+                        "gravity": "center",
+                        "childs": [
+                          {
+                            "type": "radiobutton",
+                            "width": "wrap",
+                            "height": "wrap",
+                            "text": "radio 1"
+                          },
+                          {
+                            "type": "radiobutton",
+                            "width": "wrap",
+                            "height": "wrap",
+                            "text": "radio 2"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "layout",
+                        "id": "layout5",
+                        "width": "match",
+                        "height": "wrap",
+                        "orientation": "vertical",
+                        "childs": [
+                          {
+                            "type": "switch",
+                            "width": "wrap",
+                            "height": "wrap",
+                            "text": "Switch"
+                          },
+                          {
+                            "type": "togglebutton",
+                            "width": "wrap",
+                            "height": "wrap",
+                            "text_on": "ON",
+                            "text_off": "OFF",
+                            "checked": "true"
+                          },
+                          {
+                            "type": "progressbar",
+                            "width": "match",
+                            "height": "wrap",
+                            "max": "100",
+                            "progress": "40",
+                            "style": "bar"
+                          },
+                          {
+                            "type": "progressbar",
+                            "width": "match",
+                            "height": "wrap",
+                            "style": "circle"
+                          },
+                          {
+                            "type": "progressbar",
+                            "width": "match",
+                            "height": "wrap",
+                            "max": "100",
+                            "progress": "80",
+                            "style": "seek"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          "default": {
+            "description": "error de comunicacion",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },"/health":{"get":{"responses":{"200":{"description":"successful operation"}},"parameters":[]}},"/server/info":{"get":{"security":[{"petstore_auth":["server.info.r"]}],"responses":{"200":{"description":"successful operation"}},"parameters":[]}}},"info": {
+    "version": "1.0.0",
+    "title": "Swagger miAsistente",
+    "license": {
+      "name": "MIT"
+    }
+  }}

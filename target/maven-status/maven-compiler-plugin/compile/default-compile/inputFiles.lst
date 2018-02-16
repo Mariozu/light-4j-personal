@@ -1,0 +1,12 @@
+/home/desarrollo/networknt/miAsistente/src/main/java/com/networknt/miAsistente/factory/RangoComponents/TextInput.java
+/home/desarrollo/networknt/miAsistente/src/main/java/com/networknt/miAsistente/model/Error.java
+/home/desarrollo/networknt/miAsistente/src/main/java/com/networknt/miAsistente/PathHandlerProvider.java
+/home/desarrollo/networknt/miAsistente/src/main/java/com/networknt/miAsistente/DTO/LayoutDto.java
+/home/desarrollo/networknt/miAsistente/src/main/java/com/networknt/miAsistente/DTO/LabelDto.java
+/home/desarrollo/networknt/miAsistente/src/main/java/com/networknt/miAsistente/model/CardView.java
+/home/desarrollo/networknt/miAsistente/src/main/java/com/networknt/miAsistente/factory/RangoComponents/Label.java
+/home/desarrollo/networknt/miAsistente/src/main/java/com/networknt/miAsistente/factory/RangoComponents/Layout.java
+/home/desarrollo/networknt/miAsistente/src/main/java/com/networknt/miAsistente/factory/IComponent.java
+/home/desarrollo/networknt/miAsistente/src/main/java/com/networknt/miAsistente/DTO/TextInputDto.java
+/home/desarrollo/networknt/miAsistente/src/main/java/com/networknt/miAsistente/handler/CardViewCardIdGetHandler.java
+/home/desarrollo/networknt/miAsistente/src/main/java/com/networknt/miAsistente/factory/ComponentsFactory.java

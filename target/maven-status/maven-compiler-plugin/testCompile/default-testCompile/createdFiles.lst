@@ -1,0 +1,4 @@
+com/networknt/miAsistente/handler/TestServer.class
+com/networknt/miAsistente/handler/HealthGetHandlerTest.class
+com/networknt/miAsistente/handler/CardViewCardIdGetHandlerTest.class
+com/networknt/miAsistente/handler/ServerInfoGetHandlerTest.class
